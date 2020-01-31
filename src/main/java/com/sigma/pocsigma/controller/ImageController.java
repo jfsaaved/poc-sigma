@@ -4,30 +4,35 @@ import com.sigma.pocsigma.model.Image;
 import com.sigma.pocsigma.repository.ImageRepository;
 import com.sigma.pocsigma.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
+@RequestMapping("/images")
 public class ImageController {
 
     @Autowired
     private ImageService imageService;
 
-    @GetMapping("image/${id}")
+    @GetMapping("{id}")
     public Image findById(@RequestParam Integer id) {
         return imageService.findById(id);
     }
 
-    @PostMapping("image")
+    @PostMapping
     public void save(@RequestBody Image image) {
         imageService.save(image);
     }
 
-    @PutMapping("image/${id}")
+    @PutMapping("{id}")
     public void update(@RequestParam Integer id, @RequestBody Image image) {
         imageService.update(id, image);
     }
 
-    @DeleteMapping("image/${id}")
+    @DeleteMapping("{id}")
     public void delete(@RequestParam Integer id) {
         imageService.delete(id);
     }

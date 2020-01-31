@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @Service
 public class ImageService {
@@ -29,6 +31,10 @@ public class ImageService {
 
     public void delete(Integer id){
         imageRepository.deleteById(id);
+    }
+
+    public Iterable<Image> list(){
+        return imageRepository.findAll();
     }
 
 
