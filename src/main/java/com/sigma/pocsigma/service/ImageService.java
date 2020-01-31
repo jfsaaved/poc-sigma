@@ -22,7 +22,9 @@ public class ImageService {
     }
 
     public Image update(Integer id, Image image){
-        return imageRepository.save(new Image(id, image.getName()));
+        Image newImage = imageRepository.findById(id).orElse(null);
+        if(newImage != null) newImage.setName(image.getName());
+        return imageRepository.save(newImage);
     }
 
     public void delete(Integer id){

@@ -27,7 +27,7 @@ public class ImageController {
         imageService.update(id, image);
     }
 
-    @DeleteMapping("iamge/${id}")
+    @DeleteMapping("image/${id}")
     public void delete(@RequestParam Integer id) {
         imageService.delete(id);
     }
