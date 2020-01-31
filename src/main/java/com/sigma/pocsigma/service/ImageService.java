@@ -4,10 +4,6 @@ import com.sigma.pocsigma.model.Image;
 import com.sigma.pocsigma.repository.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
 
 @Service
 public class ImageService {

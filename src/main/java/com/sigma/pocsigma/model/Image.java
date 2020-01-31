@@ -12,7 +12,6 @@ public class Image {
     @Id
     @GeneratedValue
     private Integer id;
-
     private String name;
 
     public Image() {
