@@ -13,7 +13,7 @@ public class ImageController {
 
     @GetMapping("image/${id}")
     public Image findById(@RequestParam Integer id) {
-        return imageRepository.findById(id);
+        return imageRepository.findById(id).orElse(null);
     }
 
     @PostMapping("image")
